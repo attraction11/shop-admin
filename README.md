@@ -21,3 +21,5 @@ https://gitee.com/lipengzhou/shop-admin
 
 ## Commitlint
 [commitlint](https://github.com/conventional-changelog/commitlint) 是一个撰写合格 Commit message 的工具。
+`commitlint`会在代码提交的`commit`阶段校验输入的提交日志是否符合代码提交规范。
+如[Angular提交信息规范](https://zj-git-guide.readthedocs.io/zh_CN/latest/message/Angular%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF%E8%A7%84%E8%8C%83/)
