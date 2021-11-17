@@ -18,3 +18,6 @@ https://www.yuque.com/books/share/84a225ba-970e-46ee-9e72-b09a297d75fe?#（密�
 ## 代码
 
 https://gitee.com/lipengzhou/shop-admin
+
+## Commitlint
+[commitlint](https://github.com/conventional-changelog/commitlint) 是一个撰写合格 Commit message 的工具。
