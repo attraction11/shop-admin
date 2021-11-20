@@ -1,15 +1,51 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, PropType, onMounted } from 'vue'
 
-defineProps<{ msg: string }>()
+interface User {
+  name: String,
+  age: Number
+}
+
+const props = defineProps({
+  msg: {
+    type: String,
+    default: ''
+  },
+  topic: {
+    type: Number,
+    default: null,
+    require: true
+  },
+  obj: {
+    type: Object as PropType<User>,
+    default: null
+  }
+})
 
 const count = ref(0)
+const title = ref<HTMLHeadElement | null>(null)
+
+const emit = defineEmits(['increment'])
+const incrementFn = () => {
+  count.value++
+  emit('increment', count.value)
+}
+
+onMounted(() => {
+  console.log('title: ', title.value)
+  console.log('topic: ', props.topic)
+})
+
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <h1>{{ props.msg }}</h1>
+  <h1>{{ props.topic }}</h1>
+  <button @click="incrementFn">
+    点击自增
+  </button>
 
-  <p>
+  <p ref="title">
     Recommended IDE setup:
     <a
       href="https://code.visualstudio.com/"
