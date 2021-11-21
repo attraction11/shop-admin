@@ -20,10 +20,8 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module'
   },
-  plugins: [
-    'vue',
-    '@typescript-eslint'
-  ],
+  plugins: ['vue', '@typescript-eslint'],
   rules: {
+    'vue/no-mutating-props': 'off'
   }
 }
