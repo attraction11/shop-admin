@@ -12,6 +12,7 @@
     "useDefineForClassFields": true,
     "jsx": "preserve",
     "esModuleInterop": true
+    // "paths": { "@/*": ["src/*"] } // 新版本无须配置
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
