@@ -3,6 +3,10 @@ import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
+import dotenv from 'dotenv'
+
+const NODE_ENV = process.env.NODE_ENV || 'development'
+dotenv.config({ path: `./env.${NODE_ENV}` })
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -33,7 +37,7 @@ export default defineConfig({
     proxy: {
       // 选项写法
       '/admin': {
-        target: 'https://shop.fed.lagou.com/api/', // 代理的目标地址
+        target: process.env.VITE_API_BASEURL, // 代理的目标地址
         // 兼容基于名字的虚拟主机
         // a.com ==>(通过域名映射主机本地端口) locahost:2xxx
         // b.com ==>(通过域名映射主机本地端口) locahost:3xxx

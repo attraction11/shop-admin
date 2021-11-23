@@ -7,12 +7,28 @@
     "strict": true,
     "sourceMap": true,
     "resolveJsonModule": true,
-    "lib": ["esnext", "dom"],
-    "types": ["vite/client"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "types": [
+      "vite/client"
+    ],
     "useDefineForClassFields": true,
     "jsx": "preserve",
-    "esModuleInterop": true
-    // "paths": { "@/*": ["src/*"] } // 新版本无须配置
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "paths": { // 新版本无须配置
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ]
 }

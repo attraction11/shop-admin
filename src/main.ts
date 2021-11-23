@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router/index'
 import { store, key } from './store'
 
 import './styles/element/index.scss' // 覆盖 element-plus 插件默认变量设置
