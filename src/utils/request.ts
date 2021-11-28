@@ -11,6 +11,9 @@ const request = axios.create({
 request.interceptors.request.use(function (config) {
   // 统一设置用户身份 token
   const user = store.state.user
+  if (!config?.headers) {
+    throw new Error('Expected \'config\' and \'config.headers\' not to be undefined')
+  }
   if (user && user.token) {
     config.headers.Authorization = `Bearer ${user.token}`
   }

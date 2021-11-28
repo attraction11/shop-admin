@@ -34,21 +34,24 @@ export default defineConfig({
       scss: {
         // `scss` 语法会要求语句结尾必须有分号，`sass` 则要求必须没有分号
         additionalData: '@import "@/styles/variables.scss";'
+      },
+      css: {
+        charset: false
       }
     }
   },
   server: {
     proxy: {
       // 选项写法
-      '/admin': {
-        target: process.env.VITE_API_BASEURL, // 代理的目标地址
+      '/api': {
+        target: 'https://shop.fed.lagou.com/api/admin', // 代理的目标地址
         // 兼容基于名字的虚拟主机
         // a.com ==>(通过域名映射主机本地端口) locahost:2xxx
         // b.com ==>(通过域名映射主机本地端口) locahost:3xxx
         // HTTP 请求头部的 origin 字段(默认真实 origin: localhost:3000)
         // 设置 changeOrigin: true 后代理服务会把 origin 字段修改为代理的目标地址
-        changeOrigin: true
-        // rewrite: (path) => path.replace(/^\/api/, '')
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   }

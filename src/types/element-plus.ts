@@ -1,5 +1,5 @@
 import { ElForm, ElDialog, ElTree } from 'element-plus'
-import { FormItemRule } from 'element-plus/packages/form/src/form.type'
+import { FormItemRule } from 'element-plus/es/components/form/src/form.type'
 
 export type IElForm = InstanceType<typeof ElForm>
 export type IElDialog = InstanceType<typeof ElDialog>
