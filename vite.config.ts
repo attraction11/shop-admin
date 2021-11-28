@@ -4,6 +4,7 @@ import eslintPlugin from 'vite-plugin-eslint'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
 import dotenv from 'dotenv'
+import legacy from '@vitejs/plugin-legacy'
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
 dotenv.config({ path: `./env.${NODE_ENV}` })
@@ -18,6 +19,9 @@ export default defineConfig({
     }),
     vueJsx({
       // 配置选项
+    }),
+    legacy({
+      targets: ['defaults', 'not IE 11']
     })
   ],
   resolve: {
