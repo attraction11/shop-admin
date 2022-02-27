@@ -2,12 +2,13 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+// 注意：在 ts 模块中加载 node 核心模块需要安装 node 的类型补充模块：npm i -D @types/node
 import path from 'path'
 import dotenv from 'dotenv'
 import legacy from '@vitejs/plugin-legacy'
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
-dotenv.config({ path: `./env.${NODE_ENV}` })
+dotenv.config({ path: `./env/env.${NODE_ENV}` })
 
 // https://vitejs.dev/config/
 export default defineConfig({

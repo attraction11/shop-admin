@@ -1,5 +1,5 @@
 import { Store } from 'vuex'
-import { State } from './store/index'
+import { State } from '../store/index'
 
 declare module '@vue/runtime-core' {
   // 声明自己的 store state
