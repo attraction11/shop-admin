@@ -10,7 +10,7 @@ import { store } from '@/store'
 const routes:RouteRecordRaw[] = [ // 路由规则
   {
     path: '/',
-    redirect: '/admin/home'
+    redirect: '/home'
   },
   {
     path: '/admin',
@@ -34,6 +34,12 @@ const routes:RouteRecordRaw[] = [ // 路由规则
     path: '/admin/login',
     name: 'login',
     component: () => import('../views/login/index.vue')
+  },
+  // shopify应用页面配置
+  {
+    path: '/home',
+    name: 'home',
+    component: () => import('../views/home/index.vue')
   }
 ]
 
